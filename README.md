@@ -25,9 +25,11 @@ Instead of typing IP, for convenience you could edit your `hosts` file and add t
 ```
 
 By default Apache is serving to port 80 and nginx to port 8080.
+
 If you prefer nginx over Apache simply change ports in configuration files and restart.
 
 Apache: `/etc/apache2/sites-available/000-default.conf`
+
 nginx: `/etc/nginx/sites-available/default`
 
 SSH to the box with `vagrant ssh`, if that doesn't work try `vagrant ssh-config`.
@@ -86,7 +88,7 @@ SSH to the box with `vagrant ssh`, if that doesn't work try `vagrant ssh-config`
 | webpack | 4.0.2 | ✅ |
 | webpack-cli | 3.3.10 | ✅ |
 
-### Troublshooting
+### Troubleshooting
 
 If you are having problems with VirtualBox Guest Additions and Vagrant try installing [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) plugin.
 
