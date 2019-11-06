@@ -518,7 +518,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="localhost" disabled />
+                                            <input class="input" type="text" value="localhost" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -530,7 +530,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="3306" disabled />
+                                            <input class="input" type="text" value="3306" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -542,7 +542,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +554,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -566,7 +566,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -613,7 +613,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="localhost" disabled />
+                                            <input class="input" type="text" value="localhost" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -625,7 +625,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="5432" disabled />
+                                            <input class="input" type="text" value="5432" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -637,7 +637,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -649,7 +649,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -661,7 +661,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="devbox" disabled />
+                                            <input class="input" type="text" value="devbox" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -677,6 +677,13 @@
                             MongoDB
                         </th>
                     </tr>
+                    <?php
+                    $mongodb_is_connected = FALSE;
+                    if (extension_loaded('mongodb')) :
+                        $mongodb = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                        if ($mongodb) $mongodb_is_connected = TRUE;
+                    endif;
+                    ?>
                     <tr>
                         <td>Version</td>
                         <td class="has-text-right">
@@ -688,7 +695,9 @@
                     </tr>
                     <tr>
                         <td><strong>Connected?</strong></td>
-                        <td class="has-text-right">✅</td>
+                        <td class="has-text-right">
+                            <?= ($mongodb_is_connected ? '✅' : '❌'); ?>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="3">
@@ -699,7 +708,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="localhost" disabled />
+                                            <input class="input" type="text" value="localhost" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -711,7 +720,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="27017" disabled />
+                                            <input class="input" type="text" value="27017" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -763,7 +772,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="127.0.0.1" disabled />
+                                            <input class="input" type="text" value="127.0.0.1" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -775,7 +784,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="2222" disabled />
+                                            <input class="input" type="text" value="2222" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -787,7 +796,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="vagrant" disabled />
+                                            <input class="input" type="text" value="vagrant" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -799,7 +808,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="vagrant" disabled />
+                                            <input class="input" type="text" value="vagrant" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -866,7 +875,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="localhost" disabled />
+                                            <input class="input" type="text" value="localhost" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -878,7 +887,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="11211" disabled />
+                                            <input class="input" type="text" value="11211" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -922,7 +931,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="localhost" disabled />
+                                            <input class="input" type="text" value="localhost" readonly />
                                         </div>
                                     </div>
                                 </div>
@@ -934,7 +943,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input" type="text" value="6379" disabled />
+                                            <input class="input" type="text" value="6379" readonly />
                                         </div>
                                     </div>
                                 </div>
